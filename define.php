@@ -1,0 +1,55 @@
+<?php
+function convert($data, $type = 'container'){
+	echo '<div class="'.$type.'">';
+	list($main_type, $sub_type) = explode(' ', $type, 2);
+	switch($sub_type) {
+		case 'labels':
+			echo '<span class="'.$type.'" title="'.$data['title'].'">'.$data['text'].'</span>';
+		break;
+		default:
+			switch($data['type']) {
+				case 'text':
+				case 'phonetic':
+					echo '<span class="'.$type.' text">'.$data['text'].'</span>';
+				break;
+				case 'url':
+					echo $data['text'];	
+				break;
+				case 'sound':
+?>
+<object data="http://www.google.com/dictionary/flash/SpeakerApp16.swf" type="application/x-shockwave-flash" width="16" height="16">
+	<param name="movie" value="http://www.google.com/dictionary/flash/SpeakerApp16.swf">
+	<param name="flashvars" value="sound_name=<?php echo urlencode($data['text']);?>">
+	<param name="wmode" value="transparent">
+		<video poster="http://www.google.com/dictionary/flash/SpeakerOffA16.png" onClick="this.play();" width="16" height="16" src="<?php echo $data['text'];?>">
+			<a href="<?php echo $data['text'];?>"><img src="http://www.google.com/dictionary/flash/SpeakerOffA16.png" alt="listen"></a>
+		</video>
+</object>
+<?php
+				break;
+			}
+		break;
+	}
+	foreach($data as $key => $datum) {
+		if(is_array($datum)&&is_string($key)) {
+			foreach($datum as &$d) {
+				convert($d, (isset($data['type']))?$data['type'].' '.$key:$key);
+			}
+		}
+	}
+	echo '</div>';
+}
+?><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<title><?php echo $define['query']." | ".$define['sourceLanguage']." =&gt; ".$define['targetLanguage'];?></title>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+<?php
+require('include/search.php');
+convert($define);
+?>
+</body>
+</html>

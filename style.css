@@ -1,0 +1,88 @@
+body {
+	font-family: Arial, Sans-serif;
+	font-size: 13px;
+	width: 570px;
+}
+div {
+	margin: 2px 5px;
+}
+div.search {
+	margin: 10px;
+}
+div.entries {
+	margin: 6px 0;
+}
+div.labels {
+	display: inline;
+}
+div.terms, div.phonetic, div.terms>div.labels {
+	display: inline;
+	font-weight: normal;
+}
+div.phonetic.labels, div.text.labels {
+	font-size: 12px;
+}
+div.primaries:first-child:before {
+	content: "Dictionary";
+	background-color: #EBEFF9;
+	font-weight: bold;
+	display: block;
+	padding: 5px 10px;
+	margin: 10px 0;
+}
+div.primaries>div.terms:first-child {
+	font-size: 17px;
+	font-weight: bold;
+}
+div.primaries>div.entries {
+	margin-left: 20px;
+}
+div.primaries {
+	counter-reset: section;
+}
+div.primaries div.entries>div.meaning:first-child:before {
+	counter-increment: section;
+	content: counter(section) ". ";
+}
+div.related {
+	display: inline-block;
+}
+div.related>span.related {
+	font-weight: bold;
+}
+div.example {
+	margin-left: 20px;
+}
+[title^="Part-of"] {
+	font-weight: bold;
+}
+[title=Phonetic] {
+	color: #666;
+}
+[title=Subject] {
+	border-left: dotted 1px #BBB;
+	padding-left: 0.5em;
+	color: #666;
+}
+div.webDefinitions:before {
+	content: "Web definitions";
+	background-color: #EBEFF9;
+	font-weight: bold;
+	display: block;
+	padding: 5px 10px;
+	margin: 10px 0;
+}
+div.webDefinitions>div.terms {
+	display: none;
+}
+div.webDefinitions>div.entries:before, div.example:first-child:before {
+	content: counter(list, disc)" ";
+	font-weight: bold;
+	margin-left: 5px;
+}
+div.webDefinitions>div.entries>div.terms:first-child {
+	display: inline;
+}
+div.webDefinitions>div.entries>div.terms {
+	display: block;
+}

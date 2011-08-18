@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<title>Dictionary</title>
+<link href="http://fonts.googleapis.com/css?family=Aclonica:regular" rel="stylesheet" type="text/css" >
+<style type="text/css">
+body {
+	width: 770px;
+	margin: 0 auto;
+}
+h1 {
+	font-family: 'Aclonica', serif;
+	font-size: 72px;
+	color: gray;
+	text-shadow: rgba(245, 245, 255, 0.35) 0 0px 0px, rgba(0, 0, 30, 0.08) 0px 2px 2px, rgba(0, 0, 30, 0.20) 0px 2px 1px, rgba(0, 0, 30, 0.40) 0px 2px 1px, rgba(0, 0, 0, 0.08) -5px 5px 2px;
+}
+button {
+	background: #FFF;
+	border: solid 1px #7F9DB9;
+}
+footer {
+	font-size: 12px;
+	font-family: Airal, serif;
+	color: #999;
+	margin: 30px auto;
+}
+a {
+	text-decoration: none;
+	color: gray;
+}
+</style>
+</head>
+<body>
+<h1>Dictionary</h1>
+<div>
+<form action="javascript:window.location='http://dictionary.easisee.com/'+document.getElementById('search').value+document.getElementById('language').value;">
+<select id="language" name="langpair">
+<option value="/from/ar/to/en/">Arabic &lt;&gt; English</option>
+<option value="/from/bn/to/en/">Bengali &lt;&gt; English</option>
+<option value="/from/bg/to/en/">Bulgarian &lt;&gt; English</option>
+<option value="/from/zh-Hans/to/zh-Hans/">Chinese (Simplified) dictionary</option>
+<option value="/from/zh-Hans/to/en/">Chinese (Simplified) &lt;&gt; English</option>
+<option value="/from/zh-Hant/to/zh-Hant/">Chinese (Traditional) dictionary</option>
+<option value="/from/zh-Hant/to/en/">Chinese (Traditional) &lt;&gt; English</option>
+<option value="/from/hr/to/en/">Croatian &lt;&gt; English</option>
+<option value="/from/cs/to/cs/">Czech dictionary</option>
+<option value="/from/cs/to/en/">Czech &lt;&gt; English</option>
+<option value="/from/nl/to/nl/">Dutch dictionary</option>
+<option value="/from/en/to/ar/">English &lt;&gt; Arabic</option>
+<option value="/from/en/to/bn/">English &lt;&gt; Bengali</option>
+<option value="/from/en/to/bg/">English &lt;&gt; Bulgarian</option>
+<option value="/from/en/to/zh-Hans/" selected="selected">English &lt;&gt; Chinese (Simplified)</option>
+<option value="/from/en/to/zh-Hant/">English &lt;&gt; Chinese (Traditional)</option>
+<option value="/from/en/to/hr/">English &lt;&gt; Croatian</option>
+<option value="/from/en/to/cs/">English &lt;&gt; Czech</option>
+<option value="/from/en/to/en/">English dictionary</option>
+<option value="/from/en/to/fi/">English &lt;&gt; Finnish</option>
+<option value="/from/en/to/fr/">English &lt;&gt; French</option>
+<option value="/from/en/to/de/">English &lt;&gt; German</option>
+<option value="/from/en/to/el/">English &lt;&gt; Greek</option>
+<option value="/from/en/to/gu/">English &lt;&gt; Gujarati</option>
+<option value="/from/en/to/iw/">English &lt;&gt; Hebrew</option>
+<option value="/from/en/to/hi/">English &lt;&gt; Hindi</option>
+<option value="/from/en/to/it/">English &lt;&gt; Italian</option>
+<option value="/from/en/to/kn/">English &lt;&gt; Kannada</option>
+<option value="/from/en/to/ko/">English &lt;&gt; Korean</option>
+<option value="/from/en/to/ml/">English &lt;&gt; Malayalam</option>
+<option value="/from/en/to/mr/">English &lt;&gt; Marathi</option>
+<option value="/from/en/to/pt/">English &lt;&gt; Portuguese</option>
+<option value="/from/en/to/ru/">English &lt;&gt; Russian</option>
+<option value="/from/en/to/sr/">English &lt;&gt; Serbian</option>
+<option value="/from/en/to/es/">English &lt;&gt; Spanish</option>
+<option value="/from/en/to/ta/">English &lt;&gt; Tamil</option>
+<option value="/from/en/to/te/">English &lt;&gt; Telugu</option>
+<option value="/from/en/to/th/">English &lt;&gt; Thai</option>
+<option value="/from/fi/to/en/">Finnish &lt;&gt; English</option>
+<option value="/from/fr/to/en/">French &lt;&gt; English</option>
+<option value="/from/fr/to/fr/">French dictionary</option>
+<option value="/from/de/to/en/">German &lt;&gt; English</option>
+<option value="/from/de/to/de/">German dictionary</option>
+<option value="/from/el/to/en/">Greek &lt;&gt; English</option>
+<option value="/from/gu/to/en/">Gujarati &lt;&gt; English</option>
+<option value="/from/iw/to/en/">Hebrew &lt;&gt; English</option>
+<option value="/from/hi/to/en/">Hindi &lt;&gt; English</option>
+<option value="/from/it/to/en/">Italian &lt;&gt; English</option>
+<option value="/from/it/to/it/">Italian dictionary</option>
+<option value="/from/kn/to/en/">Kannada &lt;&gt; English</option>
+<option value="/from/ko/to/en/">Korean &lt;&gt; English</option>
+<option value="/from/ko/to/ko/">Korean dictionary</option>
+<option value="/from/ml/to/en/">Malayalam &lt;&gt; English</option>
+<option value="/from/mr/to/en/">Marathi &lt;&gt; English</option>
+<option value="/from/pt/to/en/">Portuguese &lt;&gt; English</option>
+<option value="/from/pt/to/pt/">Portuguese dictionary</option>
+<option value="/from/ru/to/en/">Russian &lt;&gt; English</option>
+<option value="/from/ru/to/ru/">Russian dictionary</option>
+<option value="/from/sr/to/en/">Serbian &lt;&gt; English</option>
+<option value="/from/sk/to/sk/">Slovak dictionary</option>
+<option value="/from/es/to/en/">Spanish &lt;&gt; English</option>
+<option value="/from/es/to/es/">Spanish dictionary</option>
+<option value="/from/ta/to/en/">Tamil &lt;&gt; English</option>
+<option value="/from/te/to/en/">Telugu &lt;&gt; English</option>
+<option value="/from/th/to/en/">Thai &lt;&gt; English</option>
+</select>
+<input type="text" id="search"/>
+<button type="submit">Search Dictionary</button>
+</form>
+</div>
+<footer>
+<span>Powered by <a href="http://googlesystem.blogspot.com/2009/12/on-googles-unofficial-dictionary-api.html" target="_blank">Google's Unofficial Dictionary API</a> | Code by <a href="https://twitter.com/easisee" target="_blank">@easisee</a></span>
+</footer>
+</body>
+</html> 
