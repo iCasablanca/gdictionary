@@ -13,6 +13,6 @@ foreach(languages() as $key => $lang) {
 ?>
 </select>
 <input type="text" id="search"/>
-<button type="submit" style="background: #FFF; border: solid 1px #7F9DB9;">Search Dictionary</button>
+<button type="submit">Search Dictionary</button>
 </form>
 </div>
