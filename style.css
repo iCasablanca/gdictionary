@@ -10,12 +10,13 @@ div.search {
 	margin: 10px;
 }
 div.entries {
-	margin: 6px 0;
+	margin: 6px;
+	display: block;
 }
 div.labels {
 	display: inline;
 }
-div.terms, div.phonetic, div.terms>div.labels {
+div.primaries div.terms, div.phonetic, div.terms>div.labels {
 	display: inline;
 	font-weight: normal;
 }
@@ -34,7 +35,7 @@ div.primaries>div.terms:first-child {
 	font-size: 17px;
 	font-weight: bold;
 }
-div.primaries>div.entries {
+div.primaries>div.entries, div.example {
 	margin-left: 20px;
 }
 div.primaries {
@@ -47,22 +48,11 @@ div.primaries div.entries>div.meaning:first-child:before {
 div.related {
 	display: inline-block;
 }
+div.related.entries {
+	display: block;
+}
 div.related>span.related {
 	font-weight: bold;
-}
-div.example {
-	margin-left: 20px;
-}
-[title^="Part-of"] {
-	font-weight: bold;
-}
-[title=Phonetic] {
-	color: #666;
-}
-[title=Subject] {
-	border-left: dotted 1px #BBB;
-	padding-left: 0.5em;
-	color: #666;
 }
 div.webDefinitions:before {
 	content: "Web definitions";
@@ -83,6 +73,14 @@ div.webDefinitions>div.entries:before, div.example:first-child:before {
 div.webDefinitions>div.entries>div.terms:first-child {
 	display: inline;
 }
-div.webDefinitions>div.entries>div.terms {
-	display: block;
+[title^="Part-of"] {
+	font-weight: bold;
+}
+[title=Phonetic] {
+	color: #666;
+}
+[title=Subject] {
+	border-left: dotted 1px #BBB;
+	padding-left: 0.5em;
+	color: #666;
 }
