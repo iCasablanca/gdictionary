@@ -1,6 +1,6 @@
 <?php
-function language_fliter($pair) {	
-	foreach(languages()as $key => $langpair) {
+function language_fliter($pair) {
+	foreach(languages() as $key => $langpair) {
 		if($pair['sourceLanguage']==$langpair['from']&&$pair['targetLanguage']==$langpair['to']) {
 			return $key;
 		}
@@ -8,8 +8,8 @@ function language_fliter($pair) {
 	return FALSE;
 }
 
-function languages() {
-	return array(
+function languages($id = null) {
+	$l = array(
 		array('from' => 'ar', 'to' => 'en', 'text' => 'Arabic &lt;&gt; English'),
 		array('from' => 'bn', 'to' => 'en', 'text' => 'Bengali &lt;&gt; English'),
 		array('from' => 'bg', 'to' => 'en', 'text' => 'Bulgarian &lt;&gt; English'),
@@ -76,4 +76,9 @@ function languages() {
 		array('from' => 'te', 'to' => 'en', 'text' => 'Telugu &lt;&gt; English'),
 		array('from' => 'th', 'to' => 'en', 'text' => 'Thai &lt;&gt; English')
 	);
+	if($id==null) {
+		return $l;
+	} else {
+		return $l[$id];
+	}
 }
