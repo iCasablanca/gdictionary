@@ -2,7 +2,8 @@
 <head>
 <meta charset="UTF-8" /> 
 <title>Dictionary</title>
-<link href="http://fonts.googleapis.com/css?family=Aclonica:regular" rel="stylesheet" type="text/css" />
+<link href="/home.css" rel="stylesheet" type="text/css" />
+<link href="/search.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -16,32 +17,10 @@
   })();
 
 </script>
-<style type="text/css">
-body {
-	width: 770px;
-	margin: 0 auto;
-}
-h1 {
-	font-family: 'Aclonica', serif;
-	font-size: 72px;
-	color: gray;
-	text-shadow: rgba(245, 245, 255, 0.35) 0 0px 0px, rgba(0, 0, 30, 0.08) 0px 2px 2px, rgba(0, 0, 30, 0.20) 0px 2px 1px, rgba(0, 0, 30, 0.40) 0px 2px 1px, rgba(0, 0, 0, 0.08) -5px 5px 2px;
-}
-footer {
-	font-size: 12px;
-	font-family: Airal, serif;
-	color: #999;
-	margin: 30px auto;
-}
-a {
-	text-decoration: none;
-	color: gray;
-}
-</style>
 </head>
-<body>
+<body onload="document.getElementById('search').focus();">
 <h1>Dictionary</h1>
-<div>
+<div class="search">
 <form action="javascript:window.location='http://dictionary.easisee.com/'+document.getElementById('search').value+document.getElementById('language').value;">
 <select id="language" name="langpair">
 <option value="/from/ar/to/en/">Arabic &lt;&gt; English</option>
@@ -110,6 +89,7 @@ a {
 <option value="/from/te/to/en/">Telugu &lt;&gt; English</option>
 <option value="/from/th/to/en/">Thai &lt;&gt; English</option>
 </select>
+<div class="swap" onclick="javascript:(function(){l=document.getElementById('language');p=l.value.split('/');for(i=0;i<l.length;i++){if(l.options[i].value=='/from/'+p[4]+'/to/'+p[2]+'/'){l.options[i].selected=true;}}void 0;})();"><span class="swap"></span></div>
 <input type="text" id="search" />
 <button type="submit">Search Dictionary</button>
 </form>

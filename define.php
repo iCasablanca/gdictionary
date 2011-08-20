@@ -44,7 +44,8 @@ function convert($data, $type = 'container'){
 <head>
 <meta charset="UTF-8" /> 
 <title><?php $lang_t = languages($langpair); echo $define['query'].' &lsaquo; '.$lang_t['text'];?></title>
-<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="stylesheet" type="text/css" href="/define.css" />
+<link rel="stylesheet" type="text/css" href="/search.css" />
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

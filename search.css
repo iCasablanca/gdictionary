@@ -1,0 +1,60 @@
+form>* {
+	display: inline-block;
+	vertical-align: top;
+}
+select {
+	height: 29px;
+}
+input {
+	height: 24px;
+	font-size: 16px;
+	margin: 0px;
+	padding: 3px 6px 0px 5px;
+}
+select, input {
+	border: 1px solid #D9D9D9;
+	outline: none;
+}
+select:hover, input:hover, button:hover, div.swap:hover {
+	border-color: #B9B9B9;
+}
+button:hover {
+	color: #333;
+}
+select:focus, input:focus {
+	border-color: #4D90FE;
+}
+button, div.swap {
+	color: #666;
+	border: 1px solid #D9D9D9;
+	background-color: #F5F5F5;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	min-width: 34px;
+	line-height: 27px;
+	text-align: center;
+}
+button {
+	font-size: 15px;
+	font-weight: bold;
+	height: 29px;
+}
+div.search div {
+	height: 27px;
+	margin: 0;
+}
+span.swap {
+	background: url(//www.gstatic.com/translate/buttons6.png) -5px 0 no-repeat;
+	opacity: 0.6;
+	-moz-opacity: 0.6;
+	filter: alpha(opacity=60);
+	width: 21px;
+	height: 21px;
+	display: inline-block;
+}
+div.swap:hover span.swap {
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter: alpha(opacity=80);
+}

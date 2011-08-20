@@ -24,13 +24,21 @@ div.primaries div.terms, div.phonetic, div.terms>div.labels {
 div.phonetic.labels, div.text.labels {
 	font-size: 12px;
 }
-div.primaries:first-child:before {
-	content: "Dictionary";
-	background-color: #EBEFF9;
+div.primaries:first-child:before, div.webDefinitions:before {
+	background-color: #F5F5F5;
+	border-style: solid;
+	border-color: #E5E5E5;
+	border-width: 1px 0;
 	font-weight: bold;
 	display: block;
 	padding: 5px 10px;
 	margin: 10px 0;
+}
+div.primaries:first-child:before {
+	content: "Dictionary";
+}
+div.webDefinitions:before {
+	content: "Web definitions";
 }
 div.primaries>div.terms:first-child {
 	font-size: 17px;
@@ -54,14 +62,6 @@ div.related.entries {
 }
 div.related>span.related {
 	font-weight: bold;
-}
-div.webDefinitions:before {
-	content: "Web definitions";
-	background-color: #EBEFF9;
-	font-weight: bold;
-	display: block;
-	padding: 5px 10px;
-	margin: 10px 0;
 }
 div.webDefinitions>div.terms {
 	display: none;
