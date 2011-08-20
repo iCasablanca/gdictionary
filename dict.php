@@ -4,10 +4,6 @@ require_once('include/api.php');
 require_once('include/languages.php');
 $uri = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['SCRIPT_NAME'], '/')+1);
 list($word, $a1, $p1, $a2, $p2, $a3) = explode('/', $uri, 6);
-if(empty($word)){
-	require('index.html');
-	exit;
-}
 $query['query'] = $word;
 switch($a1) {
 	case 'from':
@@ -51,6 +47,10 @@ if(empty($query['targetLanguage'])) {
 $langpair = language_fliter($query);
 if($error==TRUE||$langpair===FALSE) {
 	echo 'Bad Request';
+	exit;
+}
+if(empty($word)) {
+	require('home.php');
 	exit;
 }
 if(MONGODB_CACHE==TRUE){
