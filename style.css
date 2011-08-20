@@ -1,7 +1,8 @@
 body {
 	font-family: Arial, Sans-serif;
 	font-size: 13px;
-	width: 570px;
+	min-width: 570px;
+	max-width: 960px;
 }
 div {
 	margin: 2px 5px;
