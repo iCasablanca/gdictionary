@@ -8,6 +8,36 @@ function language_fliter($pair) {
 	return FALSE;
 }
 
+function request_language_fliter($s_lang = 'en') {
+	$accept_langs = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+	foreach($accept_langs as $k => $lang) {
+		list($langs[$k]['lang'], $langs[$k]['q']) = explode(';', $lang);
+		list($langs[$k]['2dig'], $null) = explode('-', $langs[$k]['lang']);
+	}
+	$l = languages();
+	foreach($langs as &$accept_lang) {
+		if(strtolower($accept_lang['2dig'])=='zh') {
+			if(strtolower($accept_lang['lang'])=='zh-tw'||strtolower($accept_lang['lang'])=='zh-hk') {
+				$langcode = 'zh-Hant';
+			} else {
+				$langcode = 'zh-Hans';
+			}
+		} else {
+			$langcode = strtolower($accept_lang['2dig']);
+		}
+		foreach($l as $k => $lang) {
+			if($lang['from']==$s_lang&&$lang['to']==$langcode){
+				return $k;
+			}
+		}
+	}
+	if($s_lang=='en') {
+		return 18;
+	} else {
+		return FALSE;
+	}
+}
+
 function languages($id = null) {
 	$l = array(
 		array('from' => 'ar', 'to' => 'en', 'text' => 'Arabic &lt;&gt; English'),

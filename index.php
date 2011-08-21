@@ -38,17 +38,22 @@ switch($a1) {
 		$error = true;
 	break;
 }
-if(empty($query['sourceLanguage'])) {
-	$query['sourceLanguage'] = DEF_SLAN;
-}
 if(empty($query['targetLanguage'])) {
-	$query['targetLanguage'] = DEF_TLAN;
+	$langpair = (empty($query['sourceLanguage']))?request_language_fliter():request_language_fliter($query['sourceLanguage']);
+} else {
+	if(empty($query['sourceLanguage'])) {
+		$query['sourceLanguage'] = 'en';
+	}
+	$langpair = language_fliter($query);
 }
-$langpair = language_fliter($query);
 if($error==TRUE||$langpair===FALSE) {
+	header('HTTP/1.1 400 Bad Request');
 	echo 'Bad Request';
 	exit;
 }
+$l = languages($langpair);
+$query['targetLanguage'] = $l['to'];
+$query['sourceLanguage'] = $l['from'];
 if(empty($word)) {
 	require('home.php');
 	exit;

@@ -43,7 +43,7 @@ function convert($data, $type = 'container'){
 <html>
 <head>
 <meta charset="UTF-8" /> 
-<title><?php $lang_t = languages($langpair); echo $define['query'].' &lsaquo; '.$lang_t['text'];?></title>
+<title><?php echo $word.' &lsaquo; '.$l['text'];?></title>
 <link rel="stylesheet" type="text/css" href="/define.css" />
 <link rel="stylesheet" type="text/css" href="/search.css" />
 <script type="text/javascript">

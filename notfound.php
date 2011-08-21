@@ -1,5 +1,5 @@
 <?php
-header("HTTP/1.1 404 Not Found");
+header('HTTP/1.1 404 Not Found');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -11,7 +11,7 @@ header("HTTP/1.1 404 Not Found");
 <body>
 <?php
 require('include/search.php');
-echo '<hr>Sorry, search of "'.$query['query'].'" returns NO result.<br>Please try another search.';
+echo '<hr>Sorry, search of "'.$word.'" in '.$l['text'].' returns NO result.<br>Please try another search.';
 ?>
 </body>
 </html>
