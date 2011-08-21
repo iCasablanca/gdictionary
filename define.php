@@ -44,9 +44,9 @@ function convert($data, $type = 'container'){
 <head>
 <meta charset="UTF-8" /> 
 <title><?php echo urldecode($word).' &lsaquo; '.$l['text'];?></title>
-<link rel="stylesheet" type="text/css" href="/define.css" />
-<link rel="stylesheet" type="text/css" href="/search.css" />
-<link rel="stylesheet" type="text/css" href="/hide-examples.css" title="hide-examples" />
+<link href="/define.css" rel="stylesheet" type="text/css" />
+<link href="/search.css" rel="stylesheet" type="text/css" />
+<link href="/hide-examples.css" rel="stylesheet" type="text/css" title="hide-examples" />
 <?php if(file_exists('analytics')) {require('analytics');}?>
 </head>
 <body>

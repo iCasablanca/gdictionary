@@ -86,6 +86,7 @@ $base = (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['HTTP_HOST'].su
 							<li><code>&lt;link href="/home.css" rel="stylesheet" type="text/css" /&gt;</code></li>
 							<li><code>&lt;link href="/search.css" rel="stylesheet" type="text/css" /&gt;</code></li>
 							<li><code>&lt;link href="/define.css" rel="stylesheet" type="text/css" /&gt;</code></li>
+							<li><code>&lt;link href="/hide-examples.css" rel="stylesheet" type="text/css" title="hide-examples" /&gt;</code></li>
 						</ul>
 						<h4>Change every '<code>/*.css</code>' to '<code>/your/web/path/*.css</code>'</h4>
 					</div>

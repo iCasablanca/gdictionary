@@ -62,7 +62,7 @@ div.primaries>div.terms:first-child {
 	font-weight: bold;
 }
 div.primaries>div.entries {
-	margin-left: 20px;
+	margin-left: 24px;
 }
 div.primaries {
 	counter-reset: section;
@@ -94,10 +94,12 @@ div.related>span.related {
 div.webDefinitions>div.terms {
 	display: none;
 }
+div.webDefinitions>div.entries {
+	margin-left: 24px;
+}
 div.webDefinitions>div.entries:before {
 	content: counter(list, disc)" ";
 	font-weight: bold;
-	margin-left: 5px;
 }
 div.webDefinitions>div.entries>div.terms:first-child {
 	display: inline;
