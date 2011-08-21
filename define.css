@@ -72,10 +72,15 @@ div.primaries div.entries>div.meaning:first-child:before {
 	content: counter(section) ". ";
 }
 div.example, div.example * {
-	display: none;
-	margin: 0;
-	height: 0;
-	width: 0;
+        display: inline-block;
+        margin-left: 10px;
+        height: auto;
+        width: auto;
+}
+div.example:first-child:before {
+        content: counter(list, disc);
+        font-weight: bold;
+        margin-left: 5px;
 }
 div.related {
 	display: inline-block;

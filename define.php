@@ -44,17 +44,17 @@ function convert($data, $type = 'container'){
 <head>
 <meta charset="UTF-8" /> 
 <title><?php echo urldecode($word).' &lsaquo; '.$l['text'];?></title>
-<link rel="stylesheet" type="text/css" href="/examples.css" title="e" />
 <link rel="stylesheet" type="text/css" href="/define.css" />
 <link rel="stylesheet" type="text/css" href="/search.css" />
+<link rel="stylesheet" type="text/css" href="/hide-examples.css" title="hide-examples" />
 <?php if(file_exists('analytics')) {require('analytics');}?>
 </head>
-<body onload="s=document.styleSheets;for(i=0;i<s.length;i++){if(s[i].title=='e'){s[i].disabled=true;}}">
+<body>
 <div class="tools">
 <?php
 require('include/search.php');
 ?>
-<button type="button" onclick="(function(t){s=document.styleSheets;for(i=0;i<s.length;i++){if(s[i].title=='e'){s[i].disabled=(s[i].disabled==false)?true:false;t.innerHTML=(s[i].disabled==false)?'Hide Examples':'Show Examples';}}})(this);">Show Examples</button>
+<button type="button" onclick="(function(t){s=document.styleSheets;for(i=0;i<s.length;i++){if(s[i].title=='hide-examples'){s[i].disabled=(s[i].disabled==false)?true:false;t.innerHTML=(s[i].disabled==false)?'Show Examples':'Hide Examples';}}})(this);">Show Examples</button>
 </div><div class="blank"></div>
 <?php
 convert($define);
