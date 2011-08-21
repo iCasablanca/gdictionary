@@ -13,7 +13,7 @@ foreach(languages() as $key => $lang) {
 ?>
 </select>
 <div class="swap" onclick="javascript:(function(){l=document.getElementById('language');p=l.value.split('/');for(i=0;i<l.length;i++){if(l.options[i].value=='/from/'+p[4]+'/to/'+p[2]+'/'){l.options[i].selected=true;}}void 0;})();"><span class="swap"></span></div>
-<input type="text" id="search"/>
+<input type="text" id="search" autofocus="true"/>
 <button type="submit">Search Dictionary</button>
 </form>
 </div>

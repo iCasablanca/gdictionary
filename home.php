@@ -6,7 +6,7 @@
 <link href="/search.css" rel="stylesheet" type="text/css" />
 <?php if(file_exists('analytics')) {require('analytics');}?>
 </head>
-<body onload="document.getElementById('search').focus();">
+<body>
 <header><h1>Dictionary</h1></header>
 <?php
 require('include/search.php');
