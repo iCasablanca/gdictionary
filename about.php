@@ -8,6 +8,7 @@ $base = (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['HTTP_HOST'].su
 		<title>About Dictionary</title>
 		<meta charset="UTF-8" />
 		<link href="about.css" rel="stylesheet" type="text/css" />
+<?php if(file_exists('analytics')) {require('analytics');}?>
 	</head>
 	<body>
 		<header>
