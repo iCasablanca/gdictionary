@@ -107,7 +107,7 @@ foreach(languages() as $k => $lang) {
 			</ul>
 		</div>
 		<footer class="clearboth">
-			<h1> echo 'by <a href="http://ntk.me/" target="_blank">@easisee</a>' . $<a href="https://twitter.com/easisee" target="_blank">twitter</a>;</h1>
+			<h1 class="clearboth"> echo 'by <a href="http://ntk.me/" target="_blank">@easisee</a>' . $<a href="https://twitter.com/easisee" target="_blank">twitter</a>;</h1>
 		</footer>
 	</body>
 </html>
