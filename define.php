@@ -43,7 +43,7 @@ function convert($data, $type = 'container'){
 <html>
 <head>
 <meta charset="UTF-8" /> 
-<title><?php echo $word.' &lsaquo; '.$l['text'];?></title>
+<title><?php echo urldecode($word).' &lsaquo; '.$l['text'];?></title>
 <link rel="stylesheet" type="text/css" href="/define.css" />
 <link rel="stylesheet" type="text/css" href="/search.css" />
 <?php if(file_exists('analytics')) {require('analytics');}?>

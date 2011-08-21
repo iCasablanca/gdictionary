@@ -1,5 +1,5 @@
 <div class="search">
-<form action="javascript:window.location='http://dictionary.easisee.com/'+document.getElementById('search').value+document.getElementById('language').value;">
+<form action="javascript:window.location='<?php echo (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['HTTP_HOST'].substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['SCRIPT_NAME'], '/')+1);?>'+document.getElementById('search').value+document.getElementById('language').value;">
 <select id="language" name="langpair">
 <?php
 require_once('languages.php');

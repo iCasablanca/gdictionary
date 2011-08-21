@@ -1,0 +1,27 @@
+body {
+	font-family: Arial, Sans-serif;
+	width: 960px;
+	margin: 10px auto;
+}
+div.about {
+	float: left;
+	width: 700px;
+}
+div.details, div.details>div{
+	margin-left: 32px;
+}
+div.bookmarklets {
+	font-size: 14px;
+	line-height: 18px;
+	width: 250px;
+	float: right;
+}
+a {
+	color: #000;
+}
+ul {
+	list-style: square;
+}
+.clearboth {
+	clear: both;
+}
