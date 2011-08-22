@@ -7,10 +7,9 @@
 <?php if(file_exists('header.php')) {require('header.php');}?>
 </head>
 <body>
+<?php if(file_exists('plugin.php')) {require('plugin.php');}?>
 <header><h1>Dictionary</h1></header>
-<?php
-require('include/search.php');
-?>
+<?php require('include/search.php');?>
 <footer>
 <div>Powered by <a href="http://googlesystem.blogspot.com/2009/12/on-googles-unofficial-dictionary-api.html" target="_blank">Google's Unofficial Dictionary API</a>
 <br>

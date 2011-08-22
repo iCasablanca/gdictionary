@@ -71,5 +71,5 @@ if($define==null) {
 if(isset($define['primaries'])||isset($define['webDefinitions'])) {
 	require('define.php');
 } else {
-	require('notfound.php');
+	require('404.php');
 }
