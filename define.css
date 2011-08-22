@@ -115,7 +115,18 @@ div.primaries>div.entries>div.related>span.related {
 div.primaries>div.entries>div.related>span.related:after {
 	content: ", ";
 }
-
+div.sound {
+	background: url(//ssl.gstatic.com/dictionary/static/images/icons/1/pronunciation.png);
+	height: 16px;
+	width: 16px;
+	opacity: 0.55;
+	filter: alpha(opacity=55);
+	display: inline-block;
+}
+div.sound:hover {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
 div.phonetic.labels, div.text.labels {
 	font-size: 12px;
 }

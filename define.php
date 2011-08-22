@@ -17,14 +17,7 @@ function convert($data, $type = 'container'){
 				break;
 				case 'sound':
 ?>
-<object data="http://www.google.com/dictionary/flash/SpeakerApp16.swf" type="application/x-shockwave-flash" width="16" height="16">
-	<param name="movie" value="http://www.google.com/dictionary/flash/SpeakerApp16.swf">
-	<param name="flashvars" value="sound_name=<?php echo urlencode($data['text']);?>">
-	<param name="wmode" value="transparent">
-		<video poster="http://www.google.com/dictionary/flash/SpeakerOffA16.png" onClick="this.play();" width="16" height="16" src="<?php echo $data['text'];?>">
-			<a href="<?php echo $data['text'];?>"><img src="http://www.google.com/dictionary/flash/SpeakerOffA16.png" alt="listen"></a>
-		</video>
-</object>
+<div class="sound" onclick="document.getElementById('blank').innerHTML='<object data=\'//ssl.gstatic.com/dictionary/static/sounds/0/SoundApp.swf\' type=\'application/x-shockwave-flash\' width=\'16\' height=\'16\'><param name=\'movie\' value=\'//ssl.gstatic.com/dictionary/static/sounds/0/SoundApp.swf\'><param name=\'flashvars\' value=\'sound_name=<?php echo urlencode($data['text']);?>\'><param name=\'wmode\' value=\'transparent\'><audio autoplay=\'autoplay\' src=\'<?php echo $data['text'];?>\'></audio></object>'"></div>
 <?php
 				break;
 			}
@@ -55,7 +48,7 @@ function convert($data, $type = 'container'){
 require('include/search.php');
 ?>
 <button type="button" onclick="(function(t){s=document.styleSheets;for(i=0;i<s.length;i++){if(s[i].title=='hide-examples'){s[i].disabled=(s[i].disabled==false)?true:false;t.innerHTML=(s[i].disabled==false)?'Show Examples':'Hide Examples';}}})(this);">Show Examples</button>
-</div><div class="blank"></div>
+</div><div id="blank" class="blank"></div>
 <?php
 convert($define);
 ?>
