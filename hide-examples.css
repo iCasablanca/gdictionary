@@ -1,3 +1,3 @@
-div.example, div.example:first-child:before {
+div.example, div.example:before {
         display: none !important;
 }

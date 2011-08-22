@@ -4,8 +4,19 @@ body {
 	min-width: 570px;
 	max-width: 960px;
 }
-div {
-	margin: 2px 5px;
+em {
+	font-weight: bold;
+	font-style: normal;
+}
+a {
+	color: #0E774A;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	color: #CC1111;
 }
 div.tools {
 	background: #F5F5F5;
@@ -27,19 +38,8 @@ div.search {
 div.blank {
 	height: 70px;
 }
-div.entries {
-	margin: 6px;
-	display: block;
-}
 div.labels {
 	display: inline;
-}
-div.primaries div.terms, div.phonetic, div.terms>div.labels {
-	display: inline;
-	font-weight: normal;
-}
-div.phonetic.labels, div.text.labels {
-	font-size: 12px;
 }
 div.primaries:first-child:before, div.webDefinitions:before {
 	background-color: #F5F5F5;
@@ -54,52 +54,98 @@ div.primaries:first-child:before, div.webDefinitions:before {
 div.primaries:first-child:before {
 	content: "Dictionary";
 }
-div.webDefinitions:before {
-	content: "Web definitions";
+div.primaries>*, div.webDefinitions>* {
+	margin: 0 8px;
+	display: block;
+}
+div.primaries {
+	counter-reset: p;
+}
+div.primaries>div.entries {
+	counter-reset: c;
+}
+div.primaries div:before, div.primaries span:before {
+	content: " ";
+}
+div.primaries div.terms {
+	display: inline;
 }
 div.primaries>div.terms:first-child {
 	font-size: 17px;
 	font-weight: bold;
+	display: inline-block;
 }
-div.primaries>div.entries {
-	margin-left: 24px;
+div.primaries>div.terms:first-child>span.terms {
+	display: none;
 }
-div.primaries {
-	counter-reset: section;
+div.primaries:first-child>div.terms:first-child>span.terms {
+	display: block;
 }
-div.primaries div.entries>div.meaning:first-child:before {
-	counter-increment: section;
-	content: counter(section) ". ";
+div.phonetic, div.terms>div.labels {
+	display: inline;
+	font-weight: normal;
 }
-div.example, div.example * {
-        display: inline-block;
-        margin-left: 10px;
-        height: auto;
-        width: auto;
+div.primaries>div.entries>div.meaning:first-child:before {
+	counter-increment: p;
+	content: counter(p) ". ";
 }
-div.example:first-child:before {
-        content: counter(list, disc);
-        font-weight: bold;
-        margin-left: 5px;
+div.entries>div.container div.meaning:first-child:before {
+	counter-increment: c;
+	content: counter(c) ". ";
+}
+div.primaries div.entries>div.meaning:first-child {
+	margin: 12px 0 0 24px;;
+	display: inline-block;
+}
+div.primaries>div.entries:last-child {
+	margin-bottom: 12px;
+}
+div.primaries>div.entries>div.related {
+	margin-right: 12px;
+}
+div.primaries>div.entries>div.related:after {
+	content: ";";
+}
+div.primaries>div.entries>div.related:last-child:after {
+	content: "";
+}
+div.primaries>div.entries>div.related>span.related {
+	font-weight: normal;
+}
+div.primaries>div.entries>div.related>span.related:after {
+	content: ", ";
+}
+
+div.phonetic.labels, div.text.labels {
+	font-size: 12px;
 }
 div.related {
+	color: #767676;
 	display: inline-block;
 }
 div.related.entries {
+	color: #000;
 	display: block;
 }
 div.related>span.related {
 	font-weight: bold;
 }
+div.example, div.example * {
+	color: #767676;
+        display: inline-block;
+}
+div.example:first-child:before {
+        content: "- ";
+        padding-left: 48px;
+}
+div.webDefinitions:before {
+	content: "Web definitions";
+}
 div.webDefinitions>div.terms {
 	display: none;
 }
 div.webDefinitions>div.entries {
-	margin-left: 24px;
-}
-div.webDefinitions>div.entries:before {
-	content: counter(list, disc)" ";
-	font-weight: bold;
+	margin-bottom: 12px;
 }
 div.webDefinitions>div.entries>div.terms:first-child {
 	display: inline;
