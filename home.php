@@ -4,7 +4,7 @@
 <title>Dictionary</title>
 <link href="/home.css" rel="stylesheet" type="text/css" />
 <link href="/search.css" rel="stylesheet" type="text/css" />
-<?php if(file_exists('analytics')) {require('analytics');}?>
+<?php if(file_exists('header.php')) {require('header.php');}?>
 </head>
 <body>
 <header><h1>Dictionary</h1></header>

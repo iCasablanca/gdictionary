@@ -40,7 +40,7 @@ function convert($data, $type = 'container'){
 <link href="/define.css" rel="stylesheet" type="text/css" />
 <link href="/search.css" rel="stylesheet" type="text/css" />
 <link href="/hide-examples.css" rel="stylesheet" type="text/css" title="hide-examples" />
-<?php if(file_exists('analytics')) {require('analytics');}?>
+<?php if(file_exists('header.php')) {require('header.php');}?>
 </head>
 <body>
 <div class="tools">
