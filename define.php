@@ -17,7 +17,7 @@ function convert($data, $type = 'container'){
 				break;
 				case 'sound':
 ?>
-<div class="sound" onclick="document.getElementById('blank').innerHTML='<object data=\'//ssl.gstatic.com/dictionary/static/sounds/0/SoundApp.swf\' type=\'application/x-shockwave-flash\' width=\'16\' height=\'16\'><param name=\'movie\' value=\'//ssl.gstatic.com/dictionary/static/sounds/0/SoundApp.swf\'><param name=\'flashvars\' value=\'sound_name=<?php echo urlencode($data['text']);?>\'><param name=\'wmode\' value=\'transparent\'><audio autoplay=\'autoplay\' src=\'<?php echo $data['text'];?>\'></audio></object>'"></div>
+<div class="sound" onclick="(function(){function g(i){return document.getElementById(i);}g('blank').innerHTML='<object data=\'//ssl.gstatic.com/dictionary/static/sounds/0/SoundApp.swf\' type=\'application/x-shockwave-flash\' width=\'1\' height=\'1\'><param name=\'movie\' value=\'//ssl.gstatic.com/dictionary/static/sounds/0/SoundApp.swf\'><param name=\'flashvars\' value=\'sound_name=<?php echo urlencode($data['text']);?>\'><param name=\'wmode\' value=\'transparent\'><audio id=\'audio\' autoplay=\'autoplay\' src=\'<?php echo $data['text'];?>\'></audio></object>';a=g('audio');if(a.autoplay!=true){a.load();a.play();}})();"></div>
 <?php
 				break;
 			}

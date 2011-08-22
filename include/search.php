@@ -15,6 +15,6 @@ foreach(languages() as $key => $lang) {
 <div class="swap" onclick="(function(){l=document.getElementById('language');p=l.value.split('/');for(i=0;i<l.length;i++){if(l.options[i].value=='/from/'+p[4]+'/to/'+p[2]+'/'){l.options[i].selected=true;}}void 0;})();"><span class="swap"></span></div>
 <input type="text" id="search" autofocus="autofocus"/>
 <button type="submit">Search</button>
-<button type="button" id="google" <?php if($l['from']!=$l['to']) {echo 'style="display: none;"';}?>onclick="(function(){function g(i){return document.getElementById(i).value;};d='<?php if(isset($word)){echo $word;}?>';q=g('search');q=(q=='')?d:q;window.open('http://www.google.com/search?q='+q+'&tbs=dfn:1&defl='+g('language').split('/')[2]);})();">Google Dict</button>
+<button type="button" id="google" <?php if($l['from']!=$l['to']) {echo 'style="display: none;"';}?>onclick="(function(){function g(i){return document.getElementById(i).value;};d='<?php if(isset($word)){echo $word;}?>';q=g('search');q=(q=='')?d:q;window.open('http://www.google.com/search?q='+q+'&amp;tbs=dfn:1&amp;defl='+g('language').split('/')[2]);})();">Google Dict</button>
 </form>
 </div>
