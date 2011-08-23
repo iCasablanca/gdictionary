@@ -95,8 +95,11 @@ div.entries>div.container div.meaning:first-child:before {
 	content: counter(c) ". ";
 }
 div.primaries div.entries>div.meaning:first-child {
-	margin: 12px 0 0 24px;;
+	margin: 4px 0 0 24px;;
 	display: inline-block;
+}
+div.primaries div.entries>div.meaning:last-child {
+	margin-bottom: 8px;
 }
 div.primaries>div.entries:last-child {
 	margin-bottom: 12px;
@@ -117,16 +120,14 @@ div.primaries>div.entries>div.related>span.related:after {
 	content: ", ";
 }
 div.sound {
-	background: url(//ssl.gstatic.com/dictionary/static/images/icons/1/pronunciation.png);
+	background: url(//ssl.gstatic.com/dictionary/static/images/icons/1/pronunciation.png) no-repeat;
 	height: 16px;
 	width: 16px;
 	opacity: 0.55;
-	filter: alpha(opacity=55);
 	display: inline-block;
 }
 div.sound:hover {
 	opacity: 1;
-	filter: alpha(opacity=100);
 }
 div.phonetic.labels, div.text.labels {
 	font-size: 12px;
@@ -138,6 +139,9 @@ div.related {
 div.related.entries {
 	color: #000;
 	display: block;
+}
+div.related.labels {
+	margin-left: 24px;
 }
 div.related>span.related {
 	font-weight: bold;

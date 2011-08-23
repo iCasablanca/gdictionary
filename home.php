@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <head>
 <meta charset="UTF-8" /> 
+<meta name="description" content="An open source Dictionary based on Google's Unofficial Dictionary API" />
 <title>Dictionary</title>
 <link href="/home.css" rel="stylesheet" type="text/css" />
 <link href="/search.css" rel="stylesheet" type="text/css" />

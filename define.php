@@ -35,7 +35,8 @@ function convert($data, $type = 'container'){
 ?><!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="UTF-8" /> 
+<meta charset="UTF-8" />
+<meta name="robots" content="none" />
 <title><?php echo urldecode($word).' &lsaquo; '.$l['text'];?></title>
 <link href="/define.css" rel="stylesheet" type="text/css" />
 <link href="/search.css" rel="stylesheet" type="text/css" />

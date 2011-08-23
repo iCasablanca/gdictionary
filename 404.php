@@ -5,6 +5,7 @@ header('HTTP/1.1 404 Not Found');
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="robots" content="none" />
 <link href="/search.css" rel="stylesheet" type="text/css" />
 <title>Not Found</title>
 </head>

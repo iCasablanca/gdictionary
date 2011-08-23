@@ -7,6 +7,7 @@ $base = (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['HTTP_HOST'].su
 	<head>
 		<title>About Dictionary</title>
 		<meta charset="UTF-8" />
+		<meta name="description" content="About this Dictionary" />
 		<link href="about.css" rel="stylesheet" type="text/css" />
 <?php if(file_exists('header.php')) {require('header.php');}?>
 	</head>
