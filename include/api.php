@@ -12,4 +12,3 @@ function dict($query) {
 	$result=str_replace(array('\\x3c', '\\x3e', '\\x26', '\\x22', '\\x27', '\\x3d'), array('<', '>', '&', '\"', '\'', '='), $r);
 	return $result;
 }
-?>

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once('config.php');
 require_once('include/api.php');
 require_once('include/languages.php');
@@ -73,3 +74,4 @@ if(isset($define['primaries'])||isset($define['webDefinitions'])) {
 } else {
 	require('404.php');
 }
+ob_end_flush();
