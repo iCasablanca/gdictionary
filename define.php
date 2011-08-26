@@ -4,16 +4,16 @@ function convert($data, $type = 'container'){
 	list($main_type, $sub_type) = explode(' ', $type, 2);
 	switch($sub_type) {
 		case 'labels':
-			echo '<span class="'.$type.'" title="'.$data['title'].'">'.$data['text'].'</span>';
+			echo '<span class="'.$type.'" title="'.$data['title'].'">'.urldecode($data['text']).'</span>';
 		break;
 		default:
 			switch($data['type']) {
 				case 'text':
 				case 'phonetic':
-					echo '<span class="'.$type.' text">'.$data['text'].'</span>';
+					echo '<span class="'.$type.' text">'.urldecode($data['text']).'</span>';
 				break;
 				case 'url':
-					echo $data['text'];	
+					echo urldecode($data['text']);
 				break;
 				case 'sound':
 ?>

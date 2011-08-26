@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once('include/languages.php');
 $base = (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['HTTP_HOST'].substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['SCRIPT_NAME'], '/')+1);
 ?>
@@ -113,3 +114,5 @@ foreach(languages() as $k => $lang) {
 		</footer>
 	</body>
 </html>
+<?php
+ob_end_flush();
