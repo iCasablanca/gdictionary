@@ -21,7 +21,9 @@ a:active {
 div.tools {
 	background: #F5F5F5;
 	border-bottom: solid 1px #E5E5E5;
+	min-width: 770px;
 	width: 100%;
+	height: 30px;
 	margin: 0;
 	padding: 20px;
 	position: fixed;
