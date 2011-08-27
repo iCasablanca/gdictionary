@@ -46,8 +46,9 @@ function convert($data, $type = 'container'){
 <body>
 <?php if(file_exists('plugin.php')) {require('plugin.php');}?>
 <div class="tools">
-<?php require('include/search.php');?>
+<?php require('include/search.php'); if(isset($define['primaries'])) {?>
 <button type="button" onclick="(function(t){s=document.styleSheets;for(i=0;i<s.length;i++){if(s[i].title=='hide-examples'){s[i].disabled=(s[i].disabled==false)?true:false;t.innerHTML=(s[i].disabled==false)?'Show Examples':'Hide Examples';}}})(this);">Show Examples</button>
+<?php }?>
 </div><div id="blank" class="blank"></div>
 <?php
 convert($define);
