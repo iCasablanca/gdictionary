@@ -9,6 +9,7 @@ function dict($query) {
 	$r = substr($r, strpos($r, '{'), strrpos($r, '}')-strlen($r)+1);
 	$httpinfo = curl_getinfo($ch);
 	curl_close($ch);
-	$result=str_replace('\x', '%', $r);
+	$t = str_replace(array('\\x3c', '\\x3e', '\\x26', '\\x22', '\\x27', '\\x3d'), array('<', '>', '&', '\"', '\'', '='), $r);
+	$result = str_replace('\x', '%', $t);
 	return $result;
 }

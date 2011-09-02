@@ -6,8 +6,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon-57x57.png" />
 <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
 <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png.png" />
-<link href="/home.css" rel="stylesheet" type="text/css" />
-<link href="/search.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/home.css" />
+<link rel="stylesheet" type="text/css" href="/search.css" />
 <?php if(file_exists('header.php')) {require('header.php');}?>
 </head>
 <body>

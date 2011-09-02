@@ -9,7 +9,7 @@ $base = (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['HTTP_HOST'].su
 		<title>About Dictionary</title>
 		<meta charset="UTF-8" />
 		<meta name="description" content="About this Dictionary" />
-		<link href="about.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="about.css" />
 <?php if(file_exists('header.php')) {require('header.php');}?>
 	</head>
 	<body>
@@ -33,7 +33,7 @@ $base = (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['HTTP_HOST'].su
 						<h4>Url:</h4>
 						<ul>
 							<li><?php echo $base;?>%s</li>
-							<li><?php echo $base;?>%s/from/&lt;lang&gt;/to/&lt;lang&gt;/</li>
+							<li><?php echo $base;?>%s/&lt;lang&gt;|&lt;lang&gt;</li>
 						</ul>
 					</div>
 				</div>
@@ -85,10 +85,10 @@ $base = (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['HTTP_HOST'].su
 						</ul>
 						<h4>Find out these lines</h4>
 						<ul>
-							<li><code>&lt;link href="/home.css" rel="stylesheet" type="text/css" /&gt;</code></li>
-							<li><code>&lt;link href="/search.css" rel="stylesheet" type="text/css" /&gt;</code></li>
-							<li><code>&lt;link href="/define.css" rel="stylesheet" type="text/css" /&gt;</code></li>
-							<li><code>&lt;link href="/hide-examples.css" rel="stylesheet" type="text/css" title="hide-examples" /&gt;</code></li>
+							<li><code>&lt;link rel="stylesheet" type="text/css" href="/home.css" /&gt;</code></li>
+							<li><code>&lt;link rel="stylesheet" type="text/css" href="/search.css" /&gt;</code></li>
+							<li><code>&lt;link rel="stylesheet" type="text/css" href="/define.css" /&gt;</code></li>
+							<li><code>&lt;link rel="stylesheet" type="text/css" title="hide-examples" href="/hide-examples.css" /&gt;</code></li>
 						</ul>
 						<h4>Change every '<code>/*.css</code>' to '<code>/your/web/path/*.css</code>'</h4>
 					</div>
@@ -103,8 +103,8 @@ $base = (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['HTTP_HOST'].su
 			<h2>Bookmarklets</h2>
 			<ul>
 <?php
-foreach(languages() as $k => $lang) {
-	echo '<li><a href="javascript:(function(){if(window.getSelection){s=window.getSelection().toString();}else if(document.selection.createRange){s=document.selection.createRange().text;}window.open(\''.$base.'\'+s+\'/from/'.$lang['from'].'/to/'.$lang['to'].'/\');void 0;})();">'.$lang['text'].'</a></li>';
+foreach(languages() as $k => $t) {
+	echo '<li><a href="javascript:(function(){if(window.getSelection){s=window.getSelection().toString();}else if(document.selection.createRange){s=document.selection.createRange().text;}window.open(\''.$base.'\'+s+\'/'.$k.'\');void 0;})();">'.$t.'</a></li>';
 }
 ?>
 			</ul>

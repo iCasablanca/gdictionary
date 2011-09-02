@@ -13,11 +13,11 @@ function convert($data, $type = 'container'){
 					echo '<span class="'.$type.' text">'.urldecode($data['text']).'</span>';
 				break;
 				case 'url':
-					echo urldecode($data['text']);
+					echo $data['text'];
 				break;
 				case 'sound':
 ?>
-<div class="sound" onclick="(function(){function g(i){return document.getElementById(i);}g('blank').innerHTML='<object data=\'//ssl.gstatic.com/dictionary/static/sounds/0/SoundApp.swf\' type=\'application/x-shockwave-flash\' width=\'1\' height=\'1\'><param name=\'movie\' value=\'//ssl.gstatic.com/dictionary/static/sounds/0/SoundApp.swf\'><param name=\'flashvars\' value=\'sound_name=<?php echo urlencode($data['text']);?>\'><param name=\'wmode\' value=\'transparent\'><div id=\'h5p\'></div></object>';m=navigator.mimeTypes;f='application/x-shockwave-flash';try{new ActiveXObject('ShockwaveFlash.ShockwaveFlash');}catch(e){o=true;}if(!(m&&m[f]&&m[f].enabledPlugin)&&o){g('h5p').innerHTML='<audio id=\'audio\' src=\'<?php echo $data['text'];?>\'></audio>';g('audio').play();}})();"></div>
+<div class="sound" onclick="(function(){function g(i){return document.getElementById(i);}g('blank').innerHTML='<object data=\'//ssl.gstatic.com/dictionary/static/sounds/0/SoundApp.swf\' type=\'application/x-shockwave-flash\' width=\'1\' height=\'1\'><param name=\'movie\' value=\'//ssl.gstatic.com/dictionary/static/sounds/0/SoundApp.swf\'><param name=\'flashvars\' value=\'sound_name=<?php echo urlencode($data['text']);?>\'><param name=\'wmode\' value=\'transparent\'><div id=\'h5p\'></div></object>';m=navigator.mimeTypes;f='application/x-shockwave-flash';try{new ActiveXObject('ShockwaveFlash.ShockwaveFlash');}catch(e){o=true;}if(!(m&amp;&amp;m[f]&amp;&amp;m[f].enabledPlugin)&amp;&amp;o){g('h5p').innerHTML='<audio id=\'audio\' src=\'<?php echo $data['text'];?>\'></audio>';g('audio').play();}})();"></div>
 <?php
 				break;
 			}
@@ -37,10 +37,10 @@ function convert($data, $type = 'container'){
 <head>
 <meta charset="UTF-8" />
 <meta name="robots" content="none" />
-<title><?php echo urldecode($word).' &lsaquo; '.$l['text'];?></title>
-<link href="/define.css" rel="stylesheet" type="text/css" />
-<link href="/search.css" rel="stylesheet" type="text/css" />
-<link href="/hide-examples.css" rel="stylesheet" type="text/css" title="hide-examples" />
+<title><?php echo urldecode($query['query']).' &lsaquo; '.$langpairtext;?></title>
+<link rel="stylesheet" type="text/css" href="/define.css" />
+<link rel="stylesheet" type="text/css" href="/search.css" />
+<link rel="stylesheet" type="text/css" title="hide-examples" href="/hide-examples.css" />
 <?php if(file_exists('header.php')) {require('header.php');}?>
 </head>
 <body>

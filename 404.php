@@ -6,13 +6,13 @@ header('HTTP/1.1 404 Not Found');
 <head>
 <meta charset="UTF-8" />
 <meta name="robots" content="none" />
-<link href="/search.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/search.css" />
 <title>Not Found</title>
 </head>
 <body>
 <?php
 require('include/search.php');
-echo '<hr>Sorry, search of "'.$word.'" in '.$l['text'].' returns NO result.<br>Please try another search.';
+echo '<hr>Sorry, search of "'.urldecode($query['query']).'" in '.$langpairtext.' returns NO result.<br>Please try another search.';
 ?>
 </body>
 </html>

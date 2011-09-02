@@ -1,8 +1,8 @@
 <?php
-function language_fliter($pair) {
-	foreach(languages() as $key => $langpair) {
-		if($pair['sourceLanguage']==$langpair['from']&&$pair['targetLanguage']==$langpair['to']) {
-			return $key;
+function language_fliter($langpair) {
+	foreach(languages() as $k => $t) {
+		if($k==$langpair) {
+			return $k;
 		}
 	}
 	return FALSE;
@@ -25,90 +25,90 @@ function request_language_fliter($s_lang = 'en') {
 		} else {
 			$langcode = strtolower($accept_lang['2dig']);
 		}
-		foreach($l as $k => $lang) {
-			if($lang['from']==$s_lang&&$lang['to']==$langcode){
+		foreach($l as $k => $t) {
+			if($k==$s_lang.'|'.$langcode){
 				return $k;
 			}
 		}
 	}
 	if($s_lang=='en') {
-		return 18;
+		return 'en|en';
 	} else {
 		return FALSE;
 	}
 }
 
-function languages($id = null) {
+function languages($k = null) {
 	$l = array(
-		array('from' => 'ar', 'to' => 'en', 'text' => 'Arabic &lt;&gt; English'),
-		array('from' => 'bn', 'to' => 'en', 'text' => 'Bengali &lt;&gt; English'),
-		array('from' => 'bg', 'to' => 'en', 'text' => 'Bulgarian &lt;&gt; English'),
-		array('from' => 'zh-Hans', 'to' => 'zh-Hans', 'text' => 'Chinese (Simplified) dictionary'),
-		array('from' => 'zh-Hans', 'to' => 'en', 'text' => 'Chinese (Simplified) &lt;&gt; English'),
-		array('from' => 'zh-Hant', 'to' => 'zh-Hant', 'text' => 'Chinese (Traditional) dictionary'),
-		array('from' => 'zh-Hant', 'to' => 'en', 'text' => 'Chinese (Traditional) &lt;&gt; English'),
-		array('from' => 'hr', 'to' => 'en', 'text' => 'Croatian &lt;&gt; English'),
-		array('from' => 'cs', 'to' => 'cs', 'text' => 'Czech dictionary'),
-		array('from' => 'cs', 'to' => 'en', 'text' => 'Czech &lt;&gt; English'),
-		array('from' => 'nl', 'to' => 'nl', 'text' => 'Dutch dictionary'),
-		array('from' => 'en', 'to' => 'ar', 'text' => 'English &lt;&gt; Arabic'),
-		array('from' => 'en', 'to' => 'bn', 'text' => 'English &lt;&gt; Bengali'),
-		array('from' => 'en', 'to' => 'bg', 'text' => 'English &lt;&gt; Bulgarian'),
-		array('from' => 'en', 'to' => 'zh-Hans', 'text' => 'English &lt;&gt; Chinese (Simplified)'),
-		array('from' => 'en', 'to' => 'zh-Hant', 'text' => 'English &lt;&gt; Chinese (Traditional)'),
-		array('from' => 'en', 'to' => 'hr', 'text' => 'English &lt;&gt; Croatian'),
-		array('from' => 'en', 'to' => 'cs', 'text' => 'English &lt;&gt; Czech'),
-		array('from' => 'en', 'to' => 'en', 'text' => 'English dictionary'),
-		array('from' => 'en', 'to' => 'fi', 'text' => 'English &lt;&gt; Finnish'),
-		array('from' => 'en', 'to' => 'fr', 'text' => 'English &lt;&gt; French'),
-		array('from' => 'en', 'to' => 'de', 'text' => 'English &lt;&gt; German'),
-		array('from' => 'en', 'to' => 'el', 'text' => 'English &lt;&gt; Greek'),
-		array('from' => 'en', 'to' => 'gu', 'text' => 'English &lt;&gt; Gujarati'),
-		array('from' => 'en', 'to' => 'iw', 'text' => 'English &lt;&gt; Hebrew'),
-		array('from' => 'en', 'to' => 'hi', 'text' => 'English &lt;&gt; Hindi'),
-		array('from' => 'en', 'to' => 'it', 'text' => 'English &lt;&gt; Italian'),
-		array('from' => 'en', 'to' => 'kn', 'text' => 'English &lt;&gt; Kannada'),
-		array('from' => 'en', 'to' => 'ko', 'text' => 'English &lt;&gt; Korean'),
-		array('from' => 'en', 'to' => 'ml', 'text' => 'English &lt;&gt; Malayalam'),
-		array('from' => 'en', 'to' => 'mr', 'text' => 'English &lt;&gt; Marathi'),
-		array('from' => 'en', 'to' => 'pt', 'text' => 'English &lt;&gt; Portuguese'),
-		array('from' => 'en', 'to' => 'ru', 'text' => 'English &lt;&gt; Russian'),
-		array('from' => 'en', 'to' => 'sr', 'text' => 'English &lt;&gt; Serbian'),
-		array('from' => 'en', 'to' => 'es', 'text' => 'English &lt;&gt; Spanish'),
-		array('from' => 'en', 'to' => 'ta', 'text' => 'English &lt;&gt; Tamil'),
-		array('from' => 'en', 'to' => 'te', 'text' => 'English &lt;&gt; Telugu'),
-		array('from' => 'en', 'to' => 'th', 'text' => 'English &lt;&gt; Thai'),
-		array('from' => 'fi', 'to' => 'en', 'text' => 'Finnish &lt;&gt; English'),
-		array('from' => 'fr', 'to' => 'en', 'text' => 'French &lt;&gt; English'),
-		array('from' => 'fr', 'to' => 'fr', 'text' => 'French dictionary'),
-		array('from' => 'de', 'to' => 'en', 'text' => 'German &lt;&gt; English'),
-		array('from' => 'de', 'to' => 'de', 'text' => 'German dictionary'),
-		array('from' => 'el', 'to' => 'en', 'text' => 'Greek &lt;&gt; English'),
-		array('from' => 'gu', 'to' => 'en', 'text' => 'Gujarati &lt;&gt; English'),
-		array('from' => 'iw', 'to' => 'en', 'text' => 'Hebrew &lt;&gt; English'),
-		array('from' => 'hi', 'to' => 'en', 'text' => 'Hindi &lt;&gt; English'),
-		array('from' => 'it', 'to' => 'en', 'text' => 'Italian &lt;&gt; English'),
-		array('from' => 'it', 'to' => 'it', 'text' => 'Italian dictionary'),
-		array('from' => 'kn', 'to' => 'en', 'text' => 'Kannada &lt;&gt; English'),
-		array('from' => 'ko', 'to' => 'en', 'text' => 'Korean &lt;&gt; English'),
-		array('from' => 'ko', 'to' => 'ko', 'text' => 'Korean dictionary'),
-		array('from' => 'ml', 'to' => 'en', 'text' => 'Malayalam &lt;&gt; English'),
-		array('from' => 'mr', 'to' => 'en', 'text' => 'Marathi &lt;&gt; English'),
-		array('from' => 'pt', 'to' => 'en', 'text' => 'Portuguese &lt;&gt; English'),
-		array('from' => 'pt', 'to' => 'pt', 'text' => 'Portuguese dictionary'),
-		array('from' => 'ru', 'to' => 'en', 'text' => 'Russian &lt;&gt; English'),
-		array('from' => 'ru', 'to' => 'ru', 'text' => 'Russian dictionary'),
-		array('from' => 'sr', 'to' => 'en', 'text' => 'Serbian &lt;&gt; English'),
-		array('from' => 'sk', 'to' => 'sk', 'text' => 'Slovak dictionary'),
-		array('from' => 'es', 'to' => 'en', 'text' => 'Spanish &lt;&gt; English'),
-		array('from' => 'es', 'to' => 'es', 'text' => 'Spanish dictionary'),
-		array('from' => 'ta', 'to' => 'en', 'text' => 'Tamil &lt;&gt; English'),
-		array('from' => 'te', 'to' => 'en', 'text' => 'Telugu &lt;&gt; English'),
-		array('from' => 'th', 'to' => 'en', 'text' => 'Thai &lt;&gt; English')
+		'ar|en' => 'Arabic &lt;&gt; English',
+		'bn|en' => 'Bengali &lt;&gt; English',
+		'bg|en' => 'Bulgarian &lt;&gt; English',
+		'zh-Hans|zh-Hans' => 'Chinese (Simplified) dictionary',
+		'zh-Hans|en' => 'Chinese (Simplified) &lt;&gt; English',
+		'zh-Hant|zh-Hant' => 'Chinese (Traditional) dictionary',
+		'zh-Hant|en' => 'Chinese (Traditional) &lt;&gt; English',
+		'hr|en' => 'Croatian &lt;&gt; English',
+		'cs|cs' => 'Czech dictionary',
+		'cs|en' => 'Czech &lt;&gt; English',
+		'nl|nl' => 'Dutch dictionary',
+		'en|ar' => 'English &lt;&gt; Arabic',
+		'en|bn' => 'English &lt;&gt; Bengali',
+		'en|bg' => 'English &lt;&gt; Bulgarian',
+		'en|zh-Hans' => 'English &lt;&gt; Chinese (Simplified)',
+		'en|zh-Hant' => 'English &lt;&gt; Chinese (Traditional)',
+		'en|hr' => 'English &lt;&gt; Croatian',
+		'en|cs' => 'English &lt;&gt; Czech',
+		'en|en' => 'English dictionary',
+		'en|fi' => 'English &lt;&gt; Finnish',
+		'en|fr' => 'English &lt;&gt; French',
+		'en|de' => 'English &lt;&gt; German',
+		'en|el' => 'English &lt;&gt; Greek',
+		'en|gu' => 'English &lt;&gt; Gujarati',
+		'en|iw' => 'English &lt;&gt; Hebrew',
+		'en|hi' => 'English &lt;&gt; Hindi',
+		'en|it' => 'English &lt;&gt; Italian',
+		'en|kn' => 'English &lt;&gt; Kannada',
+		'en|ko' => 'English &lt;&gt; Korean',
+		'en|ml' => 'English &lt;&gt; Malayalam',
+		'en|mr' => 'English &lt;&gt; Marathi',
+		'en|pt' => 'English &lt;&gt; Portuguese',
+		'en|ru' => 'English &lt;&gt; Russian',
+		'en|sr' => 'English &lt;&gt; Serbian',
+		'en|es' => 'English &lt;&gt; Spanish',
+		'en|ta' => 'English &lt;&gt; Tamil',
+		'en|te' => 'English &lt;&gt; Telugu',
+		'en|th' => 'English &lt;&gt; Thai',
+		'fi|en' => 'Finnish &lt;&gt; English',
+		'fr|en' => 'French &lt;&gt; English',
+		'fr|fr' => 'French dictionary',
+		'de|en' => 'German &lt;&gt; English',
+		'de|de' => 'German dictionary',
+		'el|en' => 'Greek &lt;&gt; English',
+		'gu|en' => 'Gujarati &lt;&gt; English',
+		'iw|en' => 'Hebrew &lt;&gt; English',
+		'hi|en' => 'Hindi &lt;&gt; English',
+		'it|en' => 'Italian &lt;&gt; English',
+		'it|it' => 'Italian dictionary',
+		'kn|en' => 'Kannada &lt;&gt; English',
+		'ko|en' => 'Korean &lt;&gt; English',
+		'ko|ko' => 'Korean dictionary',
+		'ml|en' => 'Malayalam &lt;&gt; English',
+		'mr|en' => 'Marathi &lt;&gt; English',
+		'pt|en' => 'Portuguese &lt;&gt; English',
+		'pt|pt' => 'Portuguese dictionary',
+		'ru|en' => 'Russian &lt;&gt; English',
+		'ru|ru' => 'Russian dictionary',
+		'sr|en' => 'Serbian &lt;&gt; English',
+		'sk|sk' => 'Slovak dictionary',
+		'es|en' => 'Spanish &lt;&gt; English',
+		'es|es' => 'Spanish dictionary',
+		'ta|en' => 'Tamil &lt;&gt; English',
+		'te|en' => 'Telugu &lt;&gt; English',
+		'th|en' => 'Thai &lt;&gt; English'
 	);
-	if($id==null) {
+	if($k==null) {
 		return $l;
 	} else {
-		return $l[$id];
+		return $l[$k];
 	}
 }
