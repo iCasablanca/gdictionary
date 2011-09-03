@@ -32,7 +32,7 @@ function s(s) {
 	} else {
 		ss = s1[0];
 	}
-	if(ss!="") {
+	if(ss!=""&&ss!=w) {
 		document.getElementById("spell").innerHTML = "Do you mean: <a href='<?php echo $base;?>"+ss+"/<?php echo $langpairid;?>'>"+ss+"</a>.";
 	}
 }
@@ -43,7 +43,7 @@ function s(s) {
 require('include/search.php');
 ?>
 <hr>
-<div id="spell">Sorry, "<?php echo $query['query'];?>" not found.</div>
+<div id="spell">Sorry, no result for "<?php echo urldecode($query['query']);?>" in <?php echo $langpairtext;?></div>
 <script type="text/javascript" src="<?php echo $url?>"></script>
 </body>
 </html>
