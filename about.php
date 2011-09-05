@@ -59,7 +59,7 @@ $base = (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['HTTP_HOST'].su
 					<h3>Rewrite rule:</h3>
 					<div>
 						<ul>
-							<li><h4>Nginx:</h4><code>if (!-e $request_filename) {rewrite (.*) /index.php last;}</code></li>
+							<li><h4>Nginx:</h4><code>if (!-e $request_filename) {rewrite . /index.php last;}</code></li>
 							<li><h4>Apache:</h4><span>Just turn on Rewrite Mod</span></li>
 							<li><h4>Others:</h4><span>You should set it by yourself</span></li>
 						</ul>

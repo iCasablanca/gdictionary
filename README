@@ -3,7 +3,7 @@ Open source Dictionary based on Google's Unofficial Dictionary API
 ================================================================================
 Nginx rewrite rule
 
-if (!-e $request_filename) {rewrite  (.*) /index.php last;}
+if (!-e $request_filename) {rewrite . /index.php last;}
 
 ================================================================================
 About Google's Unofficial Dictionary API
@@ -14,3 +14,8 @@ http://googlesystem.blogspot.com/2009/12/on-googles-unofficial-dictionary-api.ht
 Demo
 
 http://dictionary.easisee.com/
+
+================================================================================
+Guide
+
+http://dictionary.easisee.com/about.php
