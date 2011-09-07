@@ -24,6 +24,7 @@ if($langpairid===FALSE) {
 	$langpairtext = languages($langpairid);
 }
 if(empty($query['query'])) {
+	$pagetype = 'home';
 	require('home.php');
 	exit;
 }
@@ -38,8 +39,10 @@ if($define==null) {
 	}
 }
 if(isset($define['primaries'])||isset($define['webDefinitions'])) {
+	$pagetype = 'define';
 	require('define.php');
 } else {
+	$pagetype= '404';
 	require('404.php');
 }
 ob_end_flush();
